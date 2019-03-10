@@ -218,7 +218,8 @@ function getWeather(){
         $.ajax({
            //url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25",
           //url: 'https://api.railwayapi.com/v2/pnr-status/pnr/'+city+'/apikey/zvxng1766l/',
-         url:' https://ifsc.razorpay.com/'+city,
+           //http://bank1api.pythonanywhere.com/api/banks/CBIN0283305/
+           url: 'https://bank1api.pythonanywhere.com/api/banks/'+city,
 
             type: "GET",
             dataType: "json",
@@ -244,14 +245,15 @@ function getWeather(){
 
 function showResults(data){
     var text =  "<br><br>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>BANK</strong>: "+data.BANK+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>Branch Name</strong>: "+data.BRANCH+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>Address</strong>: "+data.ADDRESS+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>CONTACT</strong>: "+data.CONTACT+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>CITY</strong>: "+data.CITY+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>DISTRICT</strong>: "+data.DISTRICT+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>STATE</strong>: "+data.STATE+";</h5>"+
-            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>BANKCODE</strong>: "+data.BANKCODE+";</h5>";
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>ID</strong>: "+data.id+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>IFSC-CODE</strong>: "+data.ifsc+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>BANK_ID</strong>: "+data.bank_id+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>BRANCH</strong>: "+data.branch+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>ADDRESS</strong>: "+data.address+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>CITY</strong>: "+data.city+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>DISTRICT</strong>: "+data.district+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>STATE</strong>: "+data.state+";</h5>"+
+            "<h4 style='padding-left:80px; padding-bottom:30px;'><strong>BANK-NAME</strong>: "+data.bank_name+";</h5>";
 
 return text;
 }
